@@ -1,0 +1,5 @@
+# file: switch_simple.yml
+- hosts: switch1
+  tasks:
+  - name: gather facts from switch
+    comware_5_2: host={{ switch_host }} username={{ switch_user }} private_key_file={{ switch_key_file }}

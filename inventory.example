@@ -1,0 +1,12 @@
+[localhost]
+localhost
+
+[switch1]
+localhost
+
+[switch1:vars]
+switch_host=192.168.x.x
+switch_user=admin
+switch_password=yourpass
+switch_key_file=~/.ssh/id_dsa
+

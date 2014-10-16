@@ -1,0 +1,5 @@
+# file: port.yml
+- hosts: switch1
+  tasks:
+  - name: Set port g1/0/15
+    comware_5_2_port: host={{ switch_host }} username={{ switch_user }} password={{ switch_password }} name=GigabitEthernet1/0/15 vlans=55,66,77 link_type=hybrid

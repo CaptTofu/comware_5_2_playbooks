@@ -1,0 +1,4 @@
+- hosts: switch1
+  tasks:
+  - name: create jimbob user
+    comware_5_2_user: host={{ switch_host }} username={{ switch_user }} password={{ switch_password }} state=present user_name=jimbob user_pass=seekrit auth_level="level 2" services=web,ssh,terminal

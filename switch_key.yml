@@ -1,0 +1,12 @@
+# file: switch_key.yml
+- hosts: switch1
+  tasks:
+  - name: gather facts using key
+    local_action:
+      module: comware_5_2
+      developer_mode: true
+      host: {{ switch_host }}
+      port: 22
+      username: {{ switch_user }}
+      gather_facts: true
+      private_key_file: {{ switch_key }}
