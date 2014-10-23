@@ -2,13 +2,38 @@
 - hosts: switch1
   tasks:
   - name: gather facts from switch
-    comware_5_2: host={{ switch_host }} username={{ switch_user }} password={{ switch_password }}
+    comware_5_2:
+      host={{ switch_host }}
+      username={{ switch_user }}
+      password={{ switch_password }}
 
   - name: delete VLAN_22
-    hpswitch_1910_vlan: host={{ switch_host }} username={{ switch_user }} password={{ switch_password }} state=absent vlan_name=VLAN_22 vlan_id=22 tagged_port_type=trunk tagged_ports=GigabitEthernet1/0/11,GigabitEthernet1/0/12
+    hpswitch_1910_vlan:
+      host={{ switch_host }}
+      username={{ switch_user }}
+      password={{ switch_password }}
+      state=absent
+      vlan_name=VLAN_22
+      vlan_id=22
+      tagged_port_type=trunk
+      tagged_ports=GigabitEthernet1/0/11,GigabitEthernet1/0/12
 
   - name: delete VLAN_33
-    hpswitch_1910_vlan: host={{ switch_host }} username={{ switch_user }} password={{ switch_password }} state=absent vlan_name=VLAN_33 vlan_id=33
+    hpswitch_1910_vlan:
+      host={{ switch_host }}
+      username={{ switch_user }}
+      password={{ switch_password }}
+      state=absent
+      vlan_name=VLAN_33
+      vlan_id=33
 
   - name: delete VLAN_44
-    hpswitch_1910_vlan: host={{ switch_host }} username={{ switch_user }} password={{ switch_password }} state=absent vlan_id=44 vlan_name=VLAN_44 untagged_port_type=access untagged_ports=GigabitEthernet1/0/9,GigabitEthernet1/0/10
+    hpswitch_1910_vlan:
+      host={{ switch_host }}
+      username={{ switch_user }}
+      password={{ switch_password }}
+      state=absent
+      vlan_id=44
+      vlan_name=VLAN_44
+      untagged_port_type=access
+      untagged_ports=GigabitEthernet1/0/9,GigabitEthernet1/0/10

@@ -1,4 +1,12 @@
 - hosts: switch1
   tasks:
   - name: delete jimbob user
-    comware_5_2_user: host={{ switch_host }} username={{ switch_user }} password={{ switch_password }} state=absent user_name=jimbob user_pass=seekrit auth_level="level 2" services=web,ssh,terminal
+    comware_5_2_user:
+      host={{ switch_host }}
+      username={{ switch_user }}
+      password={{ switch_password }}
+      state=absent
+      user_name=jimbob
+      user_pass=seekrit
+      auth_level="level 2"
+      services=web,ssh,terminal

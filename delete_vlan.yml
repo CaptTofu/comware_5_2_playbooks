@@ -2,4 +2,10 @@
 - hosts: switch1
   tasks:
   - name: delete VLAN_22
-    comware_5_2_vlan: host={{ switch_host }} username={{ switch_user }} password={{ switch_password }} state=absent vlan_name=VLAN_22 vlan_id=22 interfaces=GigabitEthernet1/0/9,GigabitEthernet1/0/10
+    comware_5_2_vlan:
+      host={{ switch_host }}
+      username={{ switch_user }}
+      password={{ switch_password }}
+      state=absent vlan_name=VLAN_22
+      vlan_id=22
+      interfaces=GigabitEthernet1/0/9,GigabitEthernet1/0/10

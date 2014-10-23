@@ -2,4 +2,8 @@
 - hosts: switch1
   tasks:
   - name: gather facts from switch
-    comware_5_2: host={{ switch_host }} username={{ switch_user }} password={{ switch_password }}
+    comware_5_2:
+     gather_facts=true
+     host={{ switch_host }}
+     username={{ switch_user }}
+     password={{ switch_password }}
